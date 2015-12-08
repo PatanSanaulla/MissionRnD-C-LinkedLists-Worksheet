@@ -22,5 +22,29 @@ struct node {
 };
 
 void sll_012_sort(struct node *head){
-	
+	struct node *p, *first, *temp, *start;
+	p = NULL;
+	temp = NULL;
+	p = (struct node*)malloc(sizeof(struct node*));
+	start = (struct node*)malloc(sizeof(struct node*));
+	start = head;
+	while (start != NULL)
+	{
+		p = head;
+		while (p->next != NULL){
+			if (p->data > (p->next)->data)
+			{
+				//temp = (struct node*)malloc(sizeof(struct node*));
+				//temp = p;
+				//temp = p->next;
+				int tem = p->data;
+				p->data = (p->next)->data;
+				(p->next)->data = tem;
+
+			}
+			p = p->next;
+		}
+		start = start->next;
+	}
+ 
 }
